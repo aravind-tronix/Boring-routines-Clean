@@ -30,6 +30,14 @@ Supervisor logs errors and output. Try googling the errors. If still it doesnt w
 
 ## Insights and configurations
 
+> xxx: deal-with-my-wife.py - sends a text message "late at work" to his wife. Automatically picks reasons from an array of strings, randomly. Runs inside a cron-job. The job fires if there are active SSH-sessions on the server after 9pm with my login.
+
+> xxx: client-bob.py - scans the inbox for emails from "Uncle Bob" (a DBA at our clients). Looks for keywords like "help", "trouble", "sorry" etc. If keywords are found - the script SSHes into the clients server and rolls back the staging database to the latest backup. Then sends a reply "no worries mate, be careful next time".
+
+> xxx: hangover.py - another cron-job that is set to specific dates. Sends automated emails like "not feeling well/gonna work from home" etc. Adds a random "reason" from another predefined array of strings. Fires if there are no interactive sessions on the server at 10:45am.
+
+> xxx: need-coffee.py - this one waits exactly 17 seconds (!), then opens a MQTT session to our coffee-machine (if the coffee machine is on the network, runs linux and has a TCP socket up and running) and sends something like sys brew. Turns out this thing starts brewing a mid-sized half-caf and waits another 24 (!) seconds before pouring it into a cup. The timing is exactly how long it takes to walk to the machine from the desk.
+
 The program "need-coffee.py" triggers the coffee machine via a [MQTT protocol](https://mqtt.org/). You need to setup a [MQTT broker](https://mosquitto.org/) in a machine. The trigger from this program publishes a mqtt message to the coffee machine, in my case its a [Raspberry pi](https://www.raspberrypi.org/).
 
 The folder "coffeemachine" contains the code which will be running on the Raspberry pi. This code receives the message via MQTT and enables a hardware pin on the pi and disables it after few secounds(considering the time to fill a cup of coffee).
