@@ -22,7 +22,7 @@ def sendmessage():
         "Baby office la team dinner iruku. Na vara late aagum d."
     ]  # Im not married and Jeni is a imaginary wife
 
-    api_id = xxxxxx  # Your telegram api id
+    api_id = 'xxxxxx'  # Your telegram api id
     api_hash = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'  # Your telegram hash
     client = TelegramClient('session_name', api_id, api_hash)
     client.start()
@@ -34,7 +34,7 @@ def sendmessage():
 def issession():
     # gets only the active sessions
     ActiveConnections = os.popen('last -a | grep -i still').read()
-    if (ActiveConnections.find('pi') != -1):  # my ssh username
+    if (ActiveConnections.find('aravind') != -1):  # my ssh username
         sendmessage()
 
 
