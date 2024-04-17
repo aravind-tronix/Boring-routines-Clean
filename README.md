@@ -30,7 +30,7 @@ Supervisor logs errors and output. Try googling the errors. If still it doesnt w
 
 ## Insights and configurations
 
-> xxx: deal-with-my-wife.py - sends a text message "late at work" to his wife. Automatically picks reasons from an array of strings, randomly. Runs inside a cron-job. The job fires if there are active SSH-sessions on the server after 9pm with my login.
+> xxx: deal-with-my-wife.py - sends a text message "late at work" to my wife. Automatically picks reasons from an array of strings, randomly. Runs inside a cron-job. The job fires if there are active SSH-sessions on the server after 9pm with my login.
 
 > xxx: client-bob.py - scans the inbox for emails from "Uncle Bob" (a DBA at our clients). Looks for keywords like "help", "trouble", "sorry" etc. If keywords are found - the script SSHes into the clients server and rolls back the staging database to the latest backup. Then sends a reply "no worries mate, be careful next time".
 
